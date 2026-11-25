@@ -19,6 +19,7 @@ OUTPUT_PATH = "/output/entry.txt"
 
 def main() -> None:
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    assert ENTRY.count("\n") == 1 and 1 <= len(ENTRY) <= 400, "entry fails the two-line 1-400 gate"
     with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as f:
         f.write(ENTRY)
     with open(OUTPUT_PATH, "rb") as f:
